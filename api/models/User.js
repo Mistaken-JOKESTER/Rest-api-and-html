@@ -41,12 +41,7 @@ const userSchema = new mongoose.Schema({
             }
         }
     },
-    token:{
-        type: String,
-    },
-    refreshToken:{
-        type: String,
-    }
+    tokens:[String]
 }, {
     timestamps: { createdAt: 'created_at' } 
 })
@@ -55,14 +50,12 @@ const userSchema = new mongoose.Schema({
 userSchema.methods.generateToken = async function() {
     try{
         user = this
-        const token = jwt.sign({ id:user._id }, 'this is a secret')
-        const refreshToken = jwt.sign({id:user._id}, 'this is refresh secret')
+        const token = jwt.sign({id:user._id}, 'this is refresh secret')
         
-        user.refreshToken = refreshToken
-        user.token = token
+        user.tokens.push(token.toString())
         await user.save()
 
-        return refreshToken
+        return token
     } catch(e){
         throw new Error({msg:'Something went wrong'})
     }

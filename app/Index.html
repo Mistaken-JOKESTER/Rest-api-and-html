@@ -31,8 +31,9 @@
 
       </form>
       <div class="container" id="login">
-          <h1>Login</h1>
+          
         <form id="loginForm">
+          <h1>Login</h1>
             <div class="form-group row">
               <div class="col-sm-12">
                 <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
@@ -51,12 +52,13 @@
       </div>
 
       <div class="container" id="register">
+          
+        <form id="registerForm">
           <h1>Registeration Form</h1>
-        <form id="">
             <div class="form-group row">
                 <div class="col-sm-12">
-                  <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                  <input type="text"  class="form-control" id="registerName" placeholder="Name" name="name" required>
+                  <label for="staticEmail" class="col-sm-2 col-form-label">Name</label>
+                  <input type="text"  class="form-control" id="registerName" placeholder="Name" name="registerName" required>
                 </div>
               </div>
             <div class="form-group row">
@@ -80,6 +82,12 @@
             <input type="submit" value="Register" class="btn btn-outline-dark" id="registerFormBtn">
             <div><a href="./Index.html">Already have an account</a></div>
           </form>
+      </div>
+
+      <div class="container" id="welcome">
+      </div>
+      <div id="logout" class="container" style="padding-top: 20px;">
+        <button id="logoutBtn" class="btn btn-outline-dark">Logout</button>
       </div>
 
       <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

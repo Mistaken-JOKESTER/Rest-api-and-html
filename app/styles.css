@@ -14,7 +14,7 @@ body{
     margin: auto;
 }
 
-#register, #login {
+#register, #login, #welcome, #logout {
     display: none;
 }
 
